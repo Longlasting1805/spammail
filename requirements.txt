@@ -90,7 +90,6 @@ hpack==3.0.0
 html5lib @ file:///tmp/build/80754af9/html5lib_1593446221756/work
 hyperframe==5.2.0
 hyperlink==21.0.0
-idna @ file:///tmp/build/80754af9/idna_1593446292537/work
 imageio @ file:///tmp/build/80754af9/imageio_1594161405741/work
 imagesize==1.2.0
 importlib==1.0.4
