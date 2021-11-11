@@ -26,7 +26,6 @@ router.register(r'gateway_register', RegisterView, basename='Register')
 router.register(r'custom_user', custom_user_view, basename='custom_user')
 router.register(r'multi_emails', send_email_view, basename='send_emails')
 router.register(r'gateways_login', LoginView, basename='login')
-url(r'admin', admin, name=admin)
 urlpatterns = router.urls
 
 # urlpatterns = [

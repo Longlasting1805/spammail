@@ -1,1 +1,1 @@
-web: gunicorn multi_email.wsgipy.exe pip install --upgrade
+web: gunicorn multi_email.wsgi pip install --upgrade
