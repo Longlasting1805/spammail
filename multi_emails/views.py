@@ -16,7 +16,7 @@ class send_email_view(viewsets.ModelViewSet):
     queryset = send_multi_email.objects.all()
 
 
-def sendsMultiMail(request):
+def sendsMultiMail(self, request):
     send_address = input('Enter Sender Email ')
     sender_pass = input('Enter Sender Password')
     list_of_send_address = input([])
