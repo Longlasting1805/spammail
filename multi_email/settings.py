@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# import db_url as db_url
 from decouple import config
 from django import middleware
 
@@ -91,12 +89,19 @@ if bool(int(config('HEROKU_DB'))):
 else:
     DATABASES = {
         'default': {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': 'db.sqlite3'
-            }
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3'
         }
-}
+        # DATABASES = {
+        #     'default': {
+        #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #         'NAME': config('NAME'),
+        #         'USER': config('USER'),
+        #         'PASSWORD': config('PASSWORD'),
+        #         'HOST': config('HOST'),
+        #         'PORT': config('PORT')
+        #     }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
