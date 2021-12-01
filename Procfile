@@ -1,1 +1,1 @@
-web: gunicorn multi_email.wsgi:application
+web: gunicorn multi_email.wsgi
