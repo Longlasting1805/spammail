@@ -14,15 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from rest_framework import routers
-from multi_emails.views import send_email_view
-from user.views import custom_user_view
+from multi_emails.views import SendEmailView
+from user.views import CustomUserView
 from gateway.views import LoginView, RegisterView
 
 router = routers.DefaultRouter()
-router.register(r'gateway_register', RegisterView, basename='Register')
-router.register(r'custom_user', custom_user_view, basename='custom_user')
-router.register(r'multi_emails', send_email_view, basename='send_emails')
-router.register(r'gateways_login', LoginView, basename='login')
+router.register(r'gatewayRegister', RegisterView, basename='Register')
+router.register(r'customUser', CustomUserView, basename='custom_user')
+router.register(r'multiEmails', SendEmailView, basename='send_emails')
+router.register(r'gatewaysLogin', LoginView, basename='login')
 urlpatterns = router.urls
 
 # urlpatterns = [

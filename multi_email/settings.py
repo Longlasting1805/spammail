@@ -16,6 +16,7 @@ from pathlib import Path
 # import db_url
 from decouple import config
 # from django import middleware
+from django.core.checks import templates
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'multi_email.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .serializers import send_email_serializer
+from .serializers import SendEmailSerializer
 from rest_framework import viewsets
-from .models import send_multi_email
+from .models import SendEmail
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -11,9 +11,9 @@ from email import encoders
 
 # Create your views here.
 
-class send_email_view(viewsets.ModelViewSet):
-    serializer_class = send_email_serializer
-    queryset = send_multi_email.objects.all()
+class SendEmailView(viewsets.ModelViewSet):
+    serializer_class = SendEmailSerializer
+    queryset = SendEmail.objects.all()
 
     def sendsMultiMail(self, request):
         send_address = input('Enter Sender Email ')

@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from multi_emails.models import send_multi_email
+from multi_emails.models import SendEmail
 
 
-class send_email_serializer(serializers.ModelSerializer):
+class SendEmailSerializer(serializers.ModelSerializer):
     class Meta:
-        model = send_multi_email
+        model = SendEmail
         fields = ('id', 'message', 'recipient')
 

@@ -8,7 +8,7 @@ import random
 import string
 from rest_framework.views import APIView
 from rest_framework import mixins, viewsets, permissions
-from .serializers import Login_serializer, Register_serializer
+from .serializers import LoginSerializer, RegisterSerializer
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
 
@@ -35,7 +35,7 @@ def get_refresh_token():
 
 
 class LoginView(viewsets.ModelViewSet):
-    serializer_class = Login_serializer
+    serializer_class = LoginSerializer
     queryset = Jwt.objects.all()
 
     def post(self, request):
@@ -60,10 +60,10 @@ class LoginView(viewsets.ModelViewSet):
 
 
 class RegisterView(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticated,)
 
-    serializer_class = Register_serializer
+    serializer_class = RegisterSerializer
     queryset = Jwt.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         user = self.queryset.filter(owner=self.request.user)
